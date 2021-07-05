@@ -2,7 +2,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { addEmployee } from "./../actions";
 
-function InputForm({ addEmployee, employeeList }) {
+function InputForm({ addEmployee }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [birthDate, setBirthDate] = useState("");
@@ -77,10 +77,10 @@ function InputForm({ addEmployee, employeeList }) {
               checked={isMarriad}
               className="form-check-input"
               type="checkbox"
-              onClick={(event) => setIsMarriad(event.target.checked)}
+              onChange={(event) => setIsMarriad(event.target.checked)}
               id="isMarriad"
             />
-            <label className="form-check-label" for="isMarriad">
+            <label className="form-check-label" htmlFor="isMarriad">
               Is marriad
             </label>
           </div>
@@ -92,9 +92,9 @@ function InputForm({ addEmployee, employeeList }) {
               className="form-check-input"
               type="checkbox"
               id="hasKids"
-              onClick={(event) => setHasKids(event.target.checked)}
+              onChange={(event) => setHasKids(event.target.checked)}
             />
-            <label className="form-check-label" for="hasKids">
+            <label className="form-check-label" htmlFor="hasKids">
               Has kids
             </label>
           </div>

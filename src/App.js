@@ -9,8 +9,8 @@ function App() {
       <Switch>
         <Route
           exact
-          path={PUBLIC_ROUTES.mealByIdPage.path}
-          component={PUBLIC_ROUTES.mealByIdPage.component}
+          path={PUBLIC_ROUTES.addEmployee.path}
+          component={PUBLIC_ROUTES.addEmployee.component}
         ></Route>
       </Switch>
     </BrowserRouter>

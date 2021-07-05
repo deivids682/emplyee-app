@@ -1,7 +1,7 @@
 import AddEmployee from "./pages/AddEmloyee";
 
 export const PUBLIC_ROUTES = {
-  mealByIdPage: {
+  addEmployee: {
     path: "/addEmployee",
     component: AddEmployee,
   },
