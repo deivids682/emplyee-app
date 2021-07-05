@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import { addEmployee } from "./../actions";
 
-function InputForm() {
+function InputForm({ addEmployee, employeeList }) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [birthDate, setBirthDate] = useState("");
@@ -12,6 +14,10 @@ function InputForm() {
 
   const clearForm = (event) => {
     event.preventDefault();
+    clearFormCore();
+  };
+
+  const clearFormCore = () => {
     setName("");
     setSurname("");
     setBirthDate("");
@@ -109,11 +115,35 @@ function InputForm() {
       >
         Clear form
       </button>
-      <button type="button" className="btn btn-primary  btn-lg">
+      <button
+        type="button"
+        className="btn btn-primary  btn-lg"
+        onClick={() =>
+          addEmployee(
+            {
+              name,
+              surname,
+              birthDate,
+              position,
+              hobby,
+              isMarriad,
+              hasKids,
+              phone,
+            },
+            clearFormCore
+          )
+        }
+      >
         Save
       </button>
     </form>
   );
 }
 
-export default InputForm;
+const mapStateToProps = (state) => {
+  return {
+    employeeList: state.employes.employeeList,
+  };
+};
+
+export default connect(mapStateToProps, { addEmployee })(InputForm);
