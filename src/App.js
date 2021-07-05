@@ -9,8 +9,13 @@ function App() {
       <Switch>
         <Route
           exact
-          path={PUBLIC_ROUTES.addEmployee.path}
-          component={PUBLIC_ROUTES.addEmployee.component}
+          path={PUBLIC_ROUTES.AddEmployee.path}
+          component={PUBLIC_ROUTES.AddEmployee.component}
+        ></Route>
+        <Route
+          exact
+          path={PUBLIC_ROUTES.HomePage.path}
+          component={PUBLIC_ROUTES.HomePage.component}
         ></Route>
       </Switch>
     </BrowserRouter>
